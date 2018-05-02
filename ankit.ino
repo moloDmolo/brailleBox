@@ -1,6 +1,8 @@
 int temp[6];
 int a[]={0,1,1,0,0,0};
 bool flags[]={false, false, false, false, false, false};
+int count=0;
+int i=0;
 void setup() {
 
   // put your setup code here, to run once:
@@ -27,16 +29,16 @@ for(int y=0; y<=5; y++){
 if(temp[y] != 0){
   flags[y]=true;
   }
-
-
 Serial.print(flags[y]);
 Serial.print(",");
 //Serial.print(temp[y]);
 //Serial.print(",");
-
 }
-Serial.println("");
 
+Serial.println("");
+int len_a =sizeof(a)/sizeof(int);
+for (int n=0;n<len_a;n++) if (a[n]!=flags[n]) return false; Serial.println("sucess"); for (int i=0; i<=len_a; i++) flags[i]=false; //reset flags 
+return true; Serial.println("fail");  
 delay(300);
 //Serial.print("one:");
 //Serial.println(one);
